@@ -4,6 +4,7 @@
 /build
 .env
 /public
+/static
 postgres/
 # Logs
 logs
