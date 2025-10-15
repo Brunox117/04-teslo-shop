@@ -37,6 +37,15 @@ export class AuthService {
     }
   }
 
+  checkAuthStatus(user: User) {
+    const { email, fullName } = user;
+    return {
+      email,
+      fullName,
+      token: this.getJwtToken({ id: user.id }),
+    };
+  }
+
   async login(loginUserDto: LoginUserDto) {
     const { password, email } = loginUserDto;
     const user = await this.userRepository.findOne({
